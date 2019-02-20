@@ -8,6 +8,7 @@ public class UIDissolve : MonoBehaviour
 {
 	public static string ShaderName = "UI/UI-Effect-Dissolve";
 
+	[SerializeField]
 	private Material _defaultMaterial = null;
 	public Material defaultMaterial
 	{
@@ -84,6 +85,7 @@ public class UIDissolve : MonoBehaviour
 		}
 	}
 
+	[SerializeField]
 	private Texture noiseTex;
 	public Texture NoiseTex
 	{
@@ -102,6 +104,11 @@ public class UIDissolve : MonoBehaviour
 		_range = defaultMaterial.GetFloat("_DissolveRange");
 		_width = defaultMaterial.GetFloat("_DissolveWidth");
 		_softness = defaultMaterial.GetFloat("_DissolveSoftness");
+		noiseTex = defaultMaterial.GetTexture("_NoiseTex");
+		if (noiseTex == null)
+		{
+			NoiseTex = GetComponent<DefaultNoise>().Noise;
+		}
 		noiseScale = defaultMaterial.GetTextureScale("_NoiseTex");
 		oldMats = new Material[Graphics.Length];
 		for(int i=0;i< Graphics.Length;i++)

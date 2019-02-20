@@ -64,7 +64,7 @@ Material:
     - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DissolveRange: 0
+    - _DissolveRange: 0.429
     - _DissolveSoftness: 0.74
     - _DissolveThreshold: 0
     - _DissolveWidth: 0.466
